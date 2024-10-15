@@ -14,3 +14,25 @@
 // Output
 // A single normalized string in camel case.
 
+function normalizeString (input) {
+    let trimmed = input.trim();
+    // console.log(trimmed, 'trimmed');
+    
+    let alphaNumeric = trimmed.replace(/[^a-zA-Z0-9\s]/g, '');
+    // console.log(alphaNumeric, 'alphaNumeric');
+    
+    let clearSpace = alphaNumeric.replace(/\s+/g, ' ');
+    // console.log(clearSpace, 'clearSpace');
+
+    let camelCase = clearSpace
+        .toLowerCase()
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+
+    return camelCase;
+}
+
+let input = " Hello!   World@   This is  a Test!. ";
+let output = normalizeString(input);
+console.log(output);
