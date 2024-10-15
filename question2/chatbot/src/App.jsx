@@ -19,7 +19,7 @@ function App() {
     },
     {
       id: 2,
-      qn: "How can I help you?",
+      qn: "How can you help me?",
     },
     {
       id: 3,
